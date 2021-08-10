@@ -171,6 +171,21 @@ The IDs correspond to the finding lists for HardeningKitty [finding_list_0x6d696
 
 * ID 1604: Set _WLAN Service\WLAN Settings\Allow Windows to automatically connect to suggested open hotspots, to networks shared by contacts, and to hotspots offering paid services_ to **Disabled**
 
+### Administrative Templates\Printer
+
+These settings are already set by default. If these settings are different, the system is vulnerable to [CVE-2021-34527](https://vuldb.com/?id.177880).
+
+* ID 1764: Set _Point and Print Restrictions\When installing drivers for a new connection_ to **Show warning and elevation prompt**
+* ID 1765: Set _Point and Print Restrictions\When updating drivers for an existing connection_ to **Show warning and elevation prompt**
+
+**Optional:** Override _Point and Print Restrictions_ so that only administrators can install print drivers on printer servers.
+
+* ID 1766: Set the registry key _RestrictDriverInstallationToAdministrators_ to **1**
+
+```
+reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint" /v RestrictDriverInstallationToAdministrators /t REG_DWORD /d 1 /f
+```
+
 ### Administrative Templates\System
 
 #### Credentials Delegation
@@ -316,6 +331,7 @@ The IDs correspond to the finding lists for HardeningKitty [finding_list_0x6d696
 * ID 1712: Set _Operating System Drives\Allow enhanced PINs for startup_ to **Enabled**
 * ID 1713: Set _Operating System Drives\Configure use of hardware-based encryption for operating system drives_ to **Enabled**
 	* ID 1714: Set _Use BitLocker software-based encryption when hardware encryption is not available_ to **True**
+* ID 1763: Set _Operating System Drives: Configure minimum PIN length for startup_ to **8 or higher**
 
 #### Cloud Content
 
@@ -325,7 +341,6 @@ The IDs correspond to the finding lists for HardeningKitty [finding_list_0x6d696
 #### Credential User Interface
 
 * ID 1722: Set _Do not display the password reveal button_ to **Enabled**
-* ID 1723: Set _Require trusted path for credential entry_ to **Enabled**
 * ID 1724: Set _Enumerate administrator accounts on elevation_ to **Disabled**
 
 #### Data Collection and Preview Builds
@@ -335,7 +350,7 @@ The IDs correspond to the finding lists for HardeningKitty [finding_list_0x6d696
 
 #### Delivery Optimization
 
-* ID 1727: Set _Download Mode_ to **Disabled**
+* ID 1727: Set _Download Mode_ to **Enabled: Simple (99)**
 
 #### Event Log Service
 
@@ -361,6 +376,7 @@ The IDs correspond to the finding lists for HardeningKitty [finding_list_0x6d696
 * ID 1809: Do not use exclusions for paths: **empty list**
 * ID 1810: Set _Exclusions\Process Exclusions_ to **Disabled**
 * ID 1811: Do not use exclusions for processes: **empty list**
+* ID 1812: Enable sandboxing for Microsoft Defender Antivirus
 * ID 1900: Set _Microsoft Defender Exploit Guard\Attack Surface Reduction\Configure Attack Surface Reduction rules_ to **Enabled**
 	* Apply these rules (Set 'Value' to '1' (Block Mode)
 	* ID 1901: be9ba2d9-53ea-4cdc-84e5-9b1eeee46550 - Block executable content from email client and webmail
@@ -394,6 +410,10 @@ In enterprise-managed mode, trusted zones can be defined via the network isolati
 	* Enable: `Enable-WindowsOptionalFeature -Online -FeatureName Windows-Defender-ApplicationGuard`
 * ID 1981: Set _Turn on Microsoft Defender Application Guard in Managed Mode_ to **Enabled: 3** (Enable Microsoft Defender Application Guard for Microsoft Edge AND isolated Windows environments)
 * ID 1982: Set _Allow auditing events in Microsoft Defender Application Guard_ to **Enabled**
+
+#### News and interests
+
+* ID 1767: Set _Enable news and interests on the taskbar_ to **Disabled**
 
 #### OneDrive
 
