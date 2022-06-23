@@ -1,5 +1,7 @@
 # HardeningKitty and Windows 10 Hardening
 
+## Test
+
 ## Introduction
 
 The project started as a simple hardening list for Windows 10. After some time, HardeningKitty was created to simplify the hardening of Windows. Now, HardeningKitty supports guidelines from Microsoft, CIS Benchmarks, DoD STIG and BSI SiSyPHuS Win10. And of course my own hardening list. 
