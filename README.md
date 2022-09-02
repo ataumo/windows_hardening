@@ -97,7 +97,7 @@ Invoke-HardeningKitty -FileFindingList .\lists\finding_list_0x6d69636b_user.csv 
 HardeningKitty ready only the setting with the default list, and saves the results in a specific file
 
 ```powershell
-Invoke-HardeningKitty -Mode Config -Report -ReportFile C:\tmp\my_hardeningkitty_report.log
+Invoke-HardeningKitty -Mode Config -Report -ReportFile C:\tmp\my_hardeningkitty_report.csv
 ```
 
 #### Backup
@@ -137,7 +137,7 @@ The formula for the HardeningKitty Score is _(Points achieved / Maximum points) 
 
 ### HardeningKitty Interface
 
-[ataumo](https://github.com/ataumo) build a web based interface for HardeningKitty. The tool can be used to create your own lists and provides additional information on the hardening settings. The [source code](https://github.com/ataumo/policies_hardening_interface) is under AGPL license and there is a [demo site](https://ataumo-photo.fr/policies_hardening_interface/).
+[ataumo](https://github.com/ataumo) build a web based interface for HardeningKitty. The tool can be used to create your own lists and provides additional information on the hardening settings. The [source code](https://github.com/ataumo/policies_hardening_interface) is under AGPL license and there is a [demo site](https://phi.cryptonit.fr/policies_hardening_interface/).
 
 ### Last Update
 
@@ -163,14 +163,24 @@ HardeningKitty can be used to audit systems against the following baselines / be
 | CIS Microsoft Windows 10 Enterprise (User) | 2004 | 1.9.1 |
 | CIS Microsoft Windows 10 Enterprise (Machine) | 20H2 | 1.10.1 |
 | CIS Microsoft Windows 10 Enterprise (User) | 20H2 | 1.10.1 |
+| CIS Microsoft Windows 10 Enterprise (Machine) | 21H1 | 1.11.0 |
+| CIS Microsoft Windows 10 Enterprise (User) | 21H1 | 1.11.0 |
+| CIS Microsoft Windows 10 Enterprise (Machine) | 21H2 | 1.12.0 |
+| CIS Microsoft Windows 10 Enterprise (User) | 21H2 | 1.12.0 |
+| CIS Microsoft Windows 11 Enterprise (Machine) | 21H2 | 1.0.0 |
+| CIS Microsoft Windows 11 Enterprise (User) | 21H2 | 1.0.0 |
 | CIS Microsoft Windows Server 2012 R2 (Machine) | R2 | 2.4.0 |
 | CIS Microsoft Windows Server 2012 R2 (User) | R2 | 2.4.0 |
 | CIS Microsoft Windows Server 2016 (Machine) | 1607 | 1.2.0 |
 | CIS Microsoft Windows Server 2016 (User) | 1607 | 1.2.0 |
+| CIS Microsoft Windows Server 2016 (Machine) | 1607 | 1.3.0 |
+| CIS Microsoft Windows Server 2016 (User) | 1607 | 1.3.0 |
 | CIS Microsoft Windows Server 2019 (Machine) | 1809 | 1.1.0 |
 | CIS Microsoft Windows Server 2019 (User) | 1809 | 1.1.0 |
-| CIS Microsoft Windows Server 2019 (Machine) | 1809 | 1.2.0 |
-| CIS Microsoft Windows Server 2019 (User) | 1809 | 1.2.0 |
+| CIS Microsoft Windows Server 2019 (Machine) | 1809 | 1.2.1 |
+| CIS Microsoft Windows Server 2019 (User) | 1809 | 1.2.1 |
+| CIS Microsoft Windows Server 2022 (Machine) | 21H2 | 1.0.0 |
+| CIS Microsoft Windows Server 2022 (User) | 21H2 | 1.0.0 |
 | DoD Microsoft Windows 10 STIG (Machine) | 20H2 | v2r1 |
 | DoD Microsoft Windows 10 STIG (User) | 20H2 | v2r1 |
 | DoD Windows Server 2019 Domain Controller STIG (Machine) | 20H2 | v2r1 |
@@ -182,27 +192,41 @@ HardeningKitty can be used to audit systems against the following baselines / be
 | Microsoft Security baseline for Microsoft Edge | 87 | Final |
 | Microsoft Security baseline for Microsoft Edge | 88, 89, 90, 91 | Final |
 | Microsoft Security baseline for Microsoft Edge | 92 | Final |
+| Microsoft Security baseline for Microsoft Edge | 93, 94 | Final |
+| Microsoft Security baseline for Microsoft Edge | 95 | Final |
+| Microsoft Security baseline for Microsoft Edge | 96 | Final |
+| Microsoft Security baseline for Microsoft Edge | 97 | Final |
+| Microsoft Security baseline for Microsoft Edge | 98, 99, 100, 101, 102, 103, 104 | Final |
 | Microsoft Security baseline for Windows 10 | 2004 | Final |
 | Microsoft Security baseline for Windows 10 | 20H2, 21H1 | Final |
+| Microsoft Security baseline for Windows 10 | 21H2 | Final |
+| Microsoft Security baseline for Windows 11 | 21H2 | Final |
 | Microsoft Security baseline for Windows Server (DC) | 2004 | Final |
 | Microsoft Security baseline for Windows Server (Member) | 2004 | Final |
 | Microsoft Security baseline for Windows Server (DC) | 20H2 | Final |
 | Microsoft Security baseline for Windows Server (Member) | 20H2 | Final |
+| Microsoft Security baseline for Windows Server 2022 (DC) | 21H2 | Final |
+| Microsoft Security baseline for Windows Server 2022 (Member) | 21H2 | Final |
 | Microsoft Security baseline for Office 365 ProPlus (Machine) | Sept 2019 | Final |
 | Microsoft Security baseline for Office 365 ProPlus (User) | Sept 2019 | Final |
 | Microsoft Security Baseline for Microsoft 365 Apps for enterprise (Machine) | v2104, v2106 | Final |
 | Microsoft Security Baseline for Microsoft 365 Apps for enterprise (User) | v2104, v2106 | Final |
+| Microsoft Security Baseline for Microsoft 365 Apps for enterprise (Machine) | v2112 | Final |
+| Microsoft Security Baseline for Microsoft 365 Apps for enterprise (User) | v2112 | Final |
+| Microsoft Security Baseline for Microsoft 365 Apps for enterprise (Machine) | v2206 | Final |
+| Microsoft Security Baseline for Microsoft 365 Apps for enterprise (User) | v2206 | Final |
 | Microsoft Windows Server TLS Settings | 1809 | 1.0 |
 | Microsoft Windows Server TLS Settings (Future Use with TLSv1.3) | 1903 | 1.0 |
 
 ## Sources
 
-* [CIS Benchmarks for Microsoft Windows 10 Enterprise Release 1909 v1.8.1](https://www.cisecurity.org/cis-benchmarks/)
-* [CIS Benchmarks for Microsoft Windows 10 Enterprise Release 2004 v1.9.1](https://www.cisecurity.org/cis-benchmarks/)
-* [CIS Benchmarks for Microsoft Windows Server 2019 RTM Release 1809 v1.1.0](https://www.cisecurity.org/cis-benchmarks/)
+* [CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks/)
 * [Security baseline (FINAL): Windows 10 and Windows Server, version 2004](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-final-windows-10-and-windows-server-version/ba-p/1543631)
 * [Security baseline (FINAL) for Windows 10 and Windows Server, version 20H2](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-final-for-windows-10-and-windows-server/ba-p/1999393)
 * [Security baseline (FINAL) for Windows 10, version 21H1](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-final-for-windows-10-version-21h1/ba-p/2362353)
+* [Security baseline for Windows 10, version 21H2](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-windows-10-version-21h2/ba-p/3042703)
+* [Windows Server 2022 Security Baseline](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/windows-server-2022-security-baseline/ba-p/2724685)
+* [Windows 11 Security baseline](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/windows-11-security-baseline/ba-p/2810772)
 * [Kernel DMA Protection for Thunderbolt 3](https://docs.microsoft.com/en-us/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
 * [BitLocker Countermeasures](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-countermeasures)
 * [Blocking the SBP-2 driver and Thunderbolt controllers to reduce 1394 DMA and Thunderbolt DMA threats to BitLocker](https://support.microsoft.com/en-us/help/2516445/blocking-the-sbp-2-driver-and-thunderbolt-controllers-to-reduce-1394-d)
@@ -219,10 +243,23 @@ HardeningKitty can be used to audit systems against the following baselines / be
 * [Security baseline for Office 365 ProPlus (v1908, Sept 2019) - FINAL](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-office-365-proplus-v1908-sept-2019-final/ba-p/873084)
 * [Security baseline for Microsoft 365 Apps for enterprise v2104 - FINAL](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-365-apps-for-enterprise-v2104/ba-p/2307695)
 * [Security baseline for Microsoft 365 Apps for enterprise v2106 - FINAL](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-365-apps-for-enterprise-v2106/ba-p/2492355)
+* [Security baseline for Microsoft 365 Apps for enterprise, v2112](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-365-apps-for-enterprise-v2112/ba-p/3038172)
+* [Security baseline for Microsoft 365 Apps for enterprise v2206](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-365-apps-for-enterprise-v2206/ba-p/3502714)
 * [mackwage/windows_hardening.cmd](https://gist.github.com/mackwage/08604751462126599d7e52f233490efe)
 * [Security baseline for Microsoft Edge version 87](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-version-87/ba-p/1950297)
 * [Security baseline for Microsoft Edge version 89](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-version-89/ba-p/2186265)
 * [Security baseline for Microsoft Edge v92](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v92/ba-p/2563679)
+* [Security baseline for Microsoft Edge v93](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v93/ba-p/2744505)
+* [Security baseline for Microsoft Edge v95](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v95/ba-p/2897269)
+* [Security baseline for Microsoft Edge v96](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v96/ba-p/2997665)
+* [Security baseline for Microsoft Edge v97](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v97/ba-p/3062252)
+* [Security baseline for Microsoft Edge v98](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v98/ba-p/3165443)
+* [Security baseline for Microsoft Edge v99](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v99/ba-p/3249241)
+* [Security baseline for Microsoft Edge v100](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v100/ba-p/3281982)
+* [Security baseline for Microsoft Edge v101](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v101/ba-p/3298140)
+* [Security baseline for Microsoft Edge v102](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v102/ba-p/3465195)
+* [Security baseline for Microsoft Edge v103](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v103/ba-p/3548236)
+* [Security baseline for Microsoft Edge v104](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-for-microsoft-edge-v104/ba-p/3593826)
 * [Microsoft Edge - Policies](https://docs.microsoft.com/en-us/DeployEdge/microsoft-edge-policies)
 * [A hint for Office 365 Telemetry](https://twitter.com/milenkowski/status/1326865844215934979)
 * [BSI: Microsoft Office Telemetry Analysis report](https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/Studien/Office_Telemetrie/Office_Telemetrie.pdf?__blob=publicationFile&v=5)
@@ -232,7 +269,8 @@ HardeningKitty can be used to audit systems against the following baselines / be
 * [Setup Microsoft Windows or IIS for SSL Perfect Forward Secrecy and TLS 1.2](https://www.hass.de/content/setup-microsoft-windows-or-iis-ssl-perfect-forward-secrecy-and-tls-12)
 * [Nartac Software - IIS Crypto](https://www.nartac.com/Products/IISCrypto/)
 * [Transport Layer Security (TLS) best practices with the .NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/tls)
-* [Microsoft TLS 1.3 Support Reference](https://devblogs.microsoft.com/premier-developer/microsoft-tls-1-3-support-reference/)
 * [TLS Cipher Suites in Windows Server 2022](https://docs.microsoft.com/en-us/windows/win32/secauthn/tls-cipher-suites-in-windows-server-2022)
+* [Transport Layer Security (TLS) registry settings](https://docs.microsoft.com/en-us/windows-server/security/tls/tls-registry-settings)
 * [Windows Defender Antivirus can now run in a sandbox](https://www.microsoft.com/security/blog/2018/10/26/windows-defender-antivirus-can-now-run-in-a-sandbox/)
 * [KB5005010: Restricting installation of new printer drivers after applying the July 6, 2021 updates](https://support.microsoft.com/en-us/topic/kb5005010-restricting-installation-of-new-printer-drivers-after-applying-the-july-6-2021-updates-31b91c02-05bc-4ada-a7ea-183b129578a7)
+* [admx.help - Group Policy Administrative Templates Catalog](https://admx.help/)

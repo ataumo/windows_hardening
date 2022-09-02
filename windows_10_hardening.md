@@ -173,8 +173,10 @@ The IDs correspond to the finding lists for HardeningKitty [finding_list_0x6d696
 
 ### Administrative Templates\Printer
 
-These settings are already set by default. If these settings are different, the system is vulnerable to [CVE-2021-34527](https://vuldb.com/?id.177880).
+These settings are already set by default. If these settings are different, the system is vulnerable to [CVE-2021-34527](https://vuldb.com/?id.177880) and [CVE-2021-36958](https://vuldb.com/?id.180784).
 
+* ID 1768: Set _Only use Package Point and Print_ to **Enabled**
+* ID 1769: Set _Package Point and Print - Approved servers_ to **Enabled** and add a list of servers or a fake entry
 * ID 1764: Set _Point and Print Restrictions\When installing drivers for a new connection_ to **Show warning and elevation prompt**
 * ID 1765: Set _Point and Print Restrictions\When updating drivers for an existing connection_ to **Show warning and elevation prompt**
 
@@ -185,6 +187,12 @@ These settings are already set by default. If these settings are different, the 
 ```
 reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint" /v RestrictDriverInstallationToAdministrators /t REG_DWORD /d 1 /f
 ```
+
+### Administrative Templates\Start Menu and Taskbar
+
+#### Notifications
+
+* ID 1771: Set _Turn off notifications network usage_ to **Enabled**
 
 ### Administrative Templates\System
 
@@ -281,7 +289,7 @@ reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers\Poin
 
 #### User Profiles
 
-* ID 1696: Set _Turn of the advertising ID_ to **Enabled**
+* ID 1696: Set _Turn off the advertising ID_ to **Enabled**
 
 #### Windows Time Service
 
@@ -454,6 +462,8 @@ In enterprise-managed mode, trusted zones can be defined via the network isolati
 * ID 1749: Set _Always install with elevated privileges_ to **Disabled**
 * ID 1750: Set _Allow user control over installs_ to **Disabled**
 * ID 1751: Set _Prevent Internet Explorer security prompt for Windows Installer scripts_ to **Disabled**
+* ID 1770: Disable Co-Installer (USB AutoInstall)
+	* Add **DisableCoInstallers=dword:00000001** to _HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Installer_
 
 #### Windows Logon Options
 
@@ -556,7 +566,6 @@ Example of an XML configuration file:
 
 #### Notifications
 
-* ID 4000: Set _Turn off notifications network usage_ to **Enabled**
 * ID 4001: Set _Turn off toast notifications on the lock screen_ to **Enabled**
 
 ### Administrative Templates\System
