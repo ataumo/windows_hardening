@@ -714,8 +714,14 @@
             }
         }
 
-        # Create Backup file 
         If ($Backup) {
+
+            if ($Mode -eq "Audit") {
+                Write-ProtocolEntry -Text "Backup..." -LogLevel "Info"
+                Invoke-HardeningKitty -Mode Config -FileFindingList $FileFindingList -Backup $BackupFile -SkipMachineInformation
+            } 
+
+            # Create Backup file 
             $Message = '"ID","Category","Name","Method","MethodArgument","RegistryPath","RegistryItem","ClassName","Namespace","Property","DefaultValue","RecommendedValue","Operator","Severity"'
             Add-MessageToFile -Text $Message -File $BackupFile
         }
@@ -1459,8 +1465,9 @@
 
         # Backup option
         If ($Backup) {
-            Write-Output "Creating Backup..."
-            Invoke-HardeningKitty -Mode Config -FileFindingList $FileFindingList -Backup $BackupFile
+            $Message = "Backup..."
+            Write-ProtocolEntry -Text $Message -LogLevel "Info"
+            Invoke-HardeningKitty -Mode Config -FileFindingList $FileFindingList -Backup $BackupFile -SkipMachineInformation
         }
 
         $FindingList = Import-Csv -Path $FileFindingList -Delimiter ","
