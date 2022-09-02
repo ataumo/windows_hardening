@@ -567,10 +567,6 @@
     If ($Backup -and $BackupFile.Length -eq 0) {
         $BackupFile = "hardeningkitty_backup_" + $Hostname + "_" + $ListName + "-$FileDate.csv"
     }
-    If ($Backup) {
-        $Message = '"ID","Category","Name","Method","MethodArgument","RegistryPath","RegistryItem","ClassName","Namespace","Property","DefaultValue","RecommendedValue","Operator","Severity"'
-        Add-MessageToFile -Text $Message -File $BackupFile
-    }
 
     #
     # Statistics
@@ -716,6 +712,12 @@
                 Write-ProtocolEntry -Text $Message -LogLevel "Error"
                 Continue
             }
+        }
+
+        # Create Backup file 
+        If ($Backup) {
+            $Message = '"ID","Category","Name","Method","MethodArgument","RegistryPath","RegistryItem","ClassName","Namespace","Property","DefaultValue","RecommendedValue","Operator","Severity"'
+            Add-MessageToFile -Text $Message -File $BackupFile
         }
 
         $FindingList = Import-Csv -Path $FileFindingList -Delimiter ","
@@ -1453,6 +1455,12 @@
                 Write-ProtocolEntry -Text $Message -LogLevel "Error"
                 Continue
             }
+        }
+
+        # Backup option
+        If ($Backup) {
+            Write-Output "Creating Backup..."
+            Invoke-HardeningKitty -Mode Config -FileFindingList $FileFindingList -Backup $BackupFile
         }
 
         $FindingList = Import-Csv -Path $FileFindingList -Delimiter ","
